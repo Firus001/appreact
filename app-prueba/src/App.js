@@ -1,6 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import './App.css';
-import MisRoutes from './components/MisRoutes';
+import MisRoutes from './components/routes/MisRoutes';
 
 const theme = createTheme({
   palette: {
