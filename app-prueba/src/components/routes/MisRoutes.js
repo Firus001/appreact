@@ -7,9 +7,10 @@ export default function MisRoutes() {
     return (
         <BrowserRouter>
             <Routes>
+            <Route path='/login' element={<LoginPage />} />
                 <Route element={<Navbar />}>
                     <Route path='/' element={<Home />} />
-                    <Route path='/login' element={<LoginPage />} />
+                    
                 </Route>
             </Routes>
         </BrowserRouter>

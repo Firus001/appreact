@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import './home.css'
 import { Button,AppBar,Box,Toolbar,Typography,IconButton } from '@mui/material';
 import { isLogged } from '../utils/cookiesUtils';
 
 export default function Home() {
+
 
 
   const isLoggedText = isLogged() ? <p>Logueado correctamente</p> : <p>Sin loguearse</p>
@@ -29,9 +31,10 @@ export default function Home() {
   const LogInButton = <Button onClick={handleLogin} variant="contained" color="error" >Login</Button>
  
   return (
-      <p>hola</p>
+   <body>
+    <div>
+      Hola
+    </div>
+   </body>
     );
   }
-  return (
-    <p>hola</p>
-  );

@@ -1,8 +1,8 @@
 import * as React from 'react';
+import './Login.css';
 import axios from "axios";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
 import { Button,AppBar,Box,Toolbar,Typography,IconButton } from '@mui/material';
 export default function LoginPage() {
     
@@ -14,6 +14,7 @@ export default function LoginPage() {
     const hola= 'hola';
 
     console.log(location)
+    
 
     const handleLogin = () => {
 
@@ -40,10 +41,35 @@ export default function LoginPage() {
     const handlePasswordChange = (event) => {
         setPassword(event.target.value)
     }
-
-
     return (
-      <p>hola</p>
-    );
+      <div className="Auth-form-container">
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Login in</h3>
+            <div className="form-group mt-3">
+              <label>Direccion de email</label>
+              <input
+                type="email"
+                className="form-control mt-1"
+                placeholder="Ingresar email"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Contraseña</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Ingresar constraseña"
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    )
 
 }
