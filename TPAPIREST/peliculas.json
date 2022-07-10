@@ -1,0 +1,10 @@
+{
+    "peliculas":{
+        "id":1,
+        "nombre":"The Batman",
+        "anioDeEstreno":2022,
+        "director":["Matt Reeves"],
+        "elenco":["Robert Pattinson","Zoe Kravitz","Jeffey Wright"],
+        "comentarios":["Muy buena peli"]
+    }
+}
