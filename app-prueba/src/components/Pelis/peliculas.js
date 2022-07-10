@@ -23,6 +23,7 @@ function Variantes() {
                 </CardActions>
             </Card>
         </Grid>
+        
     );
 }
 
@@ -36,9 +37,9 @@ export default function Peliculas() {
             .then(response => response.json())
             .then(body => {
 
-                setAlumnos(body)
+                setPeliculas(body)
                 setLoading(false)
-
+console.log(peliculas)
             })
             .catch(error => {
                 console.log(error)
@@ -46,10 +47,10 @@ export default function Peliculas() {
     }, []);
 
     const peliculasComponents = peliculas.map((peliculas, i) => {
-        return <AlumnoCard key={peliculas._id} id={peliculas._id} nombre={peliculas.nombre} anioDeEstreno={peliculas.anioDeEstreno} elenco={peliculas.elenco} comentarios={peliculas.comentarios} />
+        return <PeliculaCard key={peliculas._id} id={peliculas._id} nombre={peliculas.nombre} anioDeEstreno={peliculas.anioDeEstreno} elenco={peliculas.elenco} comentarios={peliculas.comentarios} />
     })
 
-    const peliculasSkeleton = new Array(20).fill(<Variants />)
+    const peliculasSkeleton = new Array(20).fill(<Variantes />)
     
 
     return (

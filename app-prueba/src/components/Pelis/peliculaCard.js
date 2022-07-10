@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import ListPeliculas from './ListPeliculas';
 
 
 export default function PeliculaCard({id, nombre, anioDeEstreno}) {
@@ -21,7 +22,7 @@ export default function PeliculaCard({id, nombre, anioDeEstreno}) {
                     <Typography variant="h5" component="div">
                         {anioDeEstreno}
                     </Typography>
-
+                        <ListPeliculas anioDeEstreno={anioDeEstreno}/>
                 </CardContent>
                 <CardActions>
                     <Button LinkComponent={Link} to={`/peliculas/${id}`} size="small">Ir a la Pelicula</Button>

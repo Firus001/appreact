@@ -2,6 +2,7 @@ import { Skeleton } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ListPeliculas from "./ListPeliculas";
 
 
 
@@ -26,7 +27,7 @@ export default function Pelicula() {
         .then(response => response.json())
         .then(body => {
 
-            setAlumno(body)
+            setPelicula(body)
             setLoading(false)
         })
         .catch(error => {
@@ -44,6 +45,8 @@ export default function Pelicula() {
         <div>
             Esta es la pelicula {pelicula.nombre} {pelicula.apellido}
             <br />
+            <ListPeliculas cursos={pelicula.anioDeEstreno}/>
+            
         </div>
     )
 
