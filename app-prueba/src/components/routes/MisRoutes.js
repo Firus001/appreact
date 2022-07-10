@@ -10,7 +10,8 @@ export default function MisRoutes() {
             <Route path='/login' element={<LoginPage />} />
                 <Route element={<Navbar />}>
                     <Route path='/' element={<Home />} />
-                    
+                    //<Route path='/peliculas' elements={<Home/>}/>
+                    <Route path='/peliculas/:id' element={<Home />} />
                 </Route>
             </Routes>
         </BrowserRouter>

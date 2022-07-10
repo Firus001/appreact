@@ -8,7 +8,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default function peliculaCard({id, nombre, anioDeEstreno, directorOdirectores, elenco, comentarios}) {
+export default function PeliculaCard({id, nombre, anioDeEstreno}) {
 
 
     return (
@@ -19,12 +19,12 @@ export default function peliculaCard({id, nombre, anioDeEstreno, directorOdirect
                         {nombre}
                     </Typography>
                     <Typography variant="h5" component="div">
-                        {apellido}
+                        {anioDeEstreno}
                     </Typography>
 
                 </CardContent>
                 <CardActions>
-                    <Button LinkComponent={Link} to={`/alumnos/${id}`} size="small">Ir a alumno</Button>
+                    <Button LinkComponent={Link} to={`/peliculas/${id}`} size="small">Ir a la Pelicula</Button>
                 </CardActions>
             </Card>
         </Grid>

@@ -52,6 +52,7 @@ export default function LoginPage() {
                 type="email"
                 className="form-control mt-1"
                 placeholder="Ingresar email"
+                onChange={handleEmailChange}
               />
             </div>
             <div className="form-group mt-3">
@@ -60,10 +61,14 @@ export default function LoginPage() {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Ingresar constraseña"
+                onChange={handlePasswordChange}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" 
+              className="btn btn-primary"
+              onClick={handleLogin}
+              >
                 Submit
               </button>
             </div>

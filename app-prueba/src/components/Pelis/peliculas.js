@@ -1,8 +1,8 @@
 import { Card, CardActions, CardContent, Grid, Skeleton } from "@mui/material";
 import { useEffect, useState } from "react";
-import peliculaCard from "./AlumnoCard.js";
+import PeliculaCard from "../Pelis/peliculaCard"
 
-function peliculas() {
+function Variantes() {
     return (
         <Grid item xs={4}>
             <Card sx={{ minWidth: 275 }}>
@@ -24,4 +24,38 @@ function peliculas() {
             </Card>
         </Grid>
     );
+}
+
+export default function Peliculas() {
+
+    const [peliculas, setPeliculas] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("http://localhost:3001/peliculas")
+            .then(response => response.json())
+            .then(body => {
+
+                setAlumnos(body)
+                setLoading(false)
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, []);
+
+    const peliculasComponents = peliculas.map((peliculas, i) => {
+        return <AlumnoCard key={peliculas._id} id={peliculas._id} nombre={peliculas.nombre} anioDeEstreno={peliculas.anioDeEstreno} elenco={peliculas.elenco} comentarios={peliculas.comentarios} />
+    })
+
+    const peliculasSkeleton = new Array(20).fill(<Variants />)
+    
+
+    return (
+        <Grid container spacing={2}>
+            {loading ? peliculasSkeleton : peliculasComponents}
+        </Grid>
+    )
+
 }
