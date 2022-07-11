@@ -1,0 +1,7 @@
+{
+    "mongodbUri": "mongodb://localhost:27017/cine",
+    "authentication":{
+        "jwtSecret":"uhidobtn8759o87yb98uyibt985n4y9byio35uy690b8ny9b86y298ybn9",
+        "jwtExpiry":"7d"
+    }
+}
